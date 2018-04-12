@@ -3,40 +3,29 @@
 """
 Created on Fri Apr  6 11:24:20 2018
 
-@author: dominik
+@author: Dominik
 """
 
-from random import randint
-# public key:
-e = 2561737
-n = 5043197
+e = 2561737     # exponent
+n = 5043197     # module
 
-# private key:
+N = 10  # 1:N is the chance of success
+
+prev_hash = '000'     # setting the initial hash
+
+while True:
+    transaction = input("Transaction numbers: ")
+    block = prev_hash+transaction
+    print("\nThe new block is:           " + prev_hash + ' ' + transaction +' xx')
     
-d = 3255481
-
-N = 20  # 1/N is the chance of success
-
-prev_hash = input("Prev. Hash (last 3 dig): ")
-transaction = input("Transaction numbers: ")
-#
-#prev_hash = '023'
-#transaction = str(randint(1000,9999))
-
-block = prev_hash + ' '+transaction
-print("the block is:           " + block+' xx')
-
-
-i = 0
-#sentence.replace(" ", "")
-block_nounce = block  + ' '+ str(i)
-block_num = int( block_nounce.replace(" ", ""))
-while (pow(block_num, e , n) > n//N):
-    i += 1
-    block_nounce = block + ' '+ str(i)
-    block_num = int( block_nounce.replace(" ", ""))
+    while True:
+        nounce = input("Guess the nounce: ")
+        block_number = int(block+nounce)
+        hash_block = pow(block_number, e, n)    # computing the hash
+        if hash_block < n/N:
+            print("CORRECT! The completed block is " + prev_hash + ' ' + transaction +' '+nounce)
+            input("")
+            break
     
-cont = input("Press ENTER to show result!\n" )
-print("the completed block is:"+' '+block_nounce)
-
-print("Hash of completed block: ", block_num % 1000 )
+    prev_hash = str(hash_block % 1000)
+    print("#####################\nMINING THE NEXT BLOCK!\n\nPrevious hash is "+prev_hash)
