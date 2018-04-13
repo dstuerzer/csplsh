@@ -32,7 +32,7 @@ while True:
     transaction = input("Transaction: ")
     
     block = prev_hash+transaction
-    print("\nThe block is:   " + prev_hash + '|' + transaction +'|xx')
+    print("\nThe block is:   " + prev_hash + '|' + transaction +'|xx\n')
     
     nounce = -1
     
