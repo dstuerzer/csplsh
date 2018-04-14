@@ -141,7 +141,7 @@ Inconvenient to exchange cash all the time!
 Every block contains the \emph{hash} (\#) of the previous block:
 
 \begin{figure}
-\includegraphics[scale=0.25, trim = {40mm 0mm 0mm 0mm}]{fig2.jpg}
+\includegraphics[scale=0.28, trim = {100mm 0mm 0mm 0mm}]{fig2.jpg}
 \end{figure}
 \pause
 Change a previous block $\Rightarrow$ Re-compute all later hashes!
@@ -176,10 +176,15 @@ Which is the correct chain?
 \textbf{Mining:} \underline{Guess} nounces until \#(block) $<$ threshold.
 
 \begin{figure}
-\includegraphics[scale=0.25, trim = {30mm 0mm 0mm 0mm}]{fig5}
+\includegraphics[scale=0.28, trim = {30mm 0mm 0mm 0mm}]{fig5}
 \end{figure}
 Millions of computers compete to complete the next block.\\
 \underline{Threshold is small:} It takes all computers $\sim$10 minutes to find correct nounce.
+\end{frame}
+
+\begin{frame}
+\frametitle{The Mining Game}
+\textbf{Can you guess the nounce before others do?}
 \end{frame}
 
 \begin{frame}
@@ -193,15 +198,10 @@ A \underline{valid} block in the blockchain:
 
 \textbf{A fraudster against the world}
 \begin{itemize}
-\item A fraudster needs to re-calculate all nounces \& hashes.
+\item A fraudster needs to \underline{re-calculate all nounces} \& hashes.
 \item It took millions of computers \emph{10 minutes per block} to find a valid nounce.
 \item $\Rightarrow$ fraudster can never catch up!
 \end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{The Mining Game}
-\textbf{Can you guess the correct nounce before the others do?}
 \end{frame}
 
 \end{document}
