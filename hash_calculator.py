@@ -20,14 +20,14 @@ n = 5043197     # module
 while True:
     prev_hash = input("Prev. hash:    ")
     transaction = input("Transaction: ")
-    
+
     block = prev_hash+transaction
     print("\nThe block is:   " + prev_hash + '|' + transaction)
-    
+
     block_number = int(block)
     hash_block = pow(block_number, e, n)    # computing the hash
-    
-    
+
+
     prev_hash = str(hash_block % 1000)
     print("\nThe block's hash is "+prev_hash)
     input()

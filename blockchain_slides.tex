@@ -141,13 +141,33 @@
     \end{column}
     \begin{column}{.5\textwidth}
       \begin{itemize}
-      \item takes input of any length and maps it to a hash number
-      \item very difficult/impossible to go back
+      \item takes input of any length and maps it to a hash value
+      \item very difficult/impossible to go back (one-way function)
       \item small changes in input have large effect on output
+      \item hash values occur with same probability
       \end{itemize}
     \end{column}
     \end{columns}
   \end{frame}
+
+\begin{frame}{Hash function example}
+  \begin{equation*}
+    c=m^e \mod n
+  \end{equation*}
+  \begin{itemize}
+  \item $m$\ldots plain text/number
+  \item $e$\ldots exponent
+  \item $n$\ldots module
+  \end{itemize}
+  Example: $e=7$, $n=15$:\qquad
+  \begin{tabular}{c|c}
+    \hline
+    m = 1 & c = 1\\ \hline
+    m = 2 & c = 8\\ \hline
+    m = 3 & c = 12\\ \hline
+    $\cdots$ & \\ \hline
+  \end{tabular}
+\end{frame}
 
 
 \begin{frame}
@@ -259,5 +279,16 @@ A \underline{valid} block in the blockchain:
 \item $\Rightarrow$ fraudster can never catch up!
 \end{itemize}
 \end{frame}
+
+\begin{frame}{Block chains beyond bitcoin}
+  \begin{itemize}
+    \item block-chains can be used for decentralized data exchange\\[1ex]
+    \item no company owns your data\\[1ex]
+    \item alternative to classical banking system
+%    \item there are many other crypto-currencies
+  \end{itemize}
+
+\end{frame}
+
 
 \end{document}
